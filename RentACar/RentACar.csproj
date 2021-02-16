@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53BA7880-FF2D-4FF6-9976-B45FF868031D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RentACar</RootNamespace>
+    <AssemblyName>RentACar</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Batch.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Car.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarStatu.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CarType.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCar.Designer.cs">
+      <DependentUpon>frmAddCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCarType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCarType.Designer.cs">
+      <DependentUpon>frmAddCarType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCustomer.Designer.cs">
+      <DependentUpon>frmAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEmployee.Designer.cs">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddFuelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddFuelType.Designer.cs">
+      <DependentUpon>frmAddFuelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddInspection.Designer.cs">
+      <DependentUpon>frmAddInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddMake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddMake.Designer.cs">
+      <DependentUpon>frmAddMake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddModel.Designer.cs">
+      <DependentUpon>frmAddModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddRent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddRent.Designer.cs">
+      <DependentUpon>frmAddRent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCars.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCars.Designer.cs">
+      <DependentUpon>frmCars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarTypes.Designer.cs">
+      <DependentUpon>frmCarTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomers.Designer.cs">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditCar.Designer.cs">
+      <DependentUpon>frmEditCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditCarType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditCarType.Designer.cs">
+      <DependentUpon>frmEditCarType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditCustomer.Designer.cs">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditEmployee.Designer.cs">
+      <DependentUpon>frmEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditFuelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditFuelType.Designer.cs">
+      <DependentUpon>frmEditFuelType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditInspection.Designer.cs">
+      <DependentUpon>frmEditInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditMake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditMake.Designer.cs">
+      <DependentUpon>frmEditMake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditModel.Designer.cs">
+      <DependentUpon>frmEditModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditRent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditRent.Designer.cs">
+      <DependentUpon>frmEditRent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployees.Designer.cs">
+      <DependentUpon>frmEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFuelTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFuelTypes.Designer.cs">
+      <DependentUpon>frmFuelTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInspection.Designer.cs">
+      <DependentUpon>frmInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMakes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMakes.Designer.cs">
+      <DependentUpon>frmMakes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModels.Designer.cs">
+      <DependentUpon>frmModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRents.Designer.cs">
+      <DependentUpon>frmRents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FuelQuantity.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FuelType.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Inspection.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Make.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonType.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rent.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RentACarDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentACarDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RentACarModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentACarModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RentACarModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RentACarModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentACarModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="RentStatu.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RubberStatu.cs">
+      <DependentUpon>RentACarModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCar.resx">
+      <DependentUpon>frmAddCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCarType.resx">
+      <DependentUpon>frmAddCarType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCustomer.resx">
+      <DependentUpon>frmAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddFuelType.resx">
+      <DependentUpon>frmAddFuelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddInspection.resx">
+      <DependentUpon>frmAddInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddMake.resx">
+      <DependentUpon>frmAddMake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddModel.resx">
+      <DependentUpon>frmAddModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddRent.resx">
+      <DependentUpon>frmAddRent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCars.resx">
+      <DependentUpon>frmCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarTypes.resx">
+      <DependentUpon>frmCarTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomers.resx">
+      <DependentUpon>frmCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditCar.resx">
+      <DependentUpon>frmEditCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditCarType.resx">
+      <DependentUpon>frmEditCarType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditCustomer.resx">
+      <DependentUpon>frmEditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditEmployee.resx">
+      <DependentUpon>frmEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditFuelType.resx">
+      <DependentUpon>frmEditFuelType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditInspection.resx">
+      <DependentUpon>frmEditInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditMake.resx">
+      <DependentUpon>frmEditMake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditModel.resx">
+      <DependentUpon>frmEditModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditRent.resx">
+      <DependentUpon>frmEditRent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployees.resx">
+      <DependentUpon>frmEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFuelTypes.resx">
+      <DependentUpon>frmFuelTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInspection.resx">
+      <DependentUpon>frmInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMakes.resx">
+      <DependentUpon>frmMakes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModels.resx">
+      <DependentUpon>frmModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRents.resx">
+      <DependentUpon>frmRents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RentsReport.rdlc" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="RentACarModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RentACarModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RentACarDataSet.xsc">
+      <DependentUpon>RentACarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentACarDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentACarDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RentACarDataSet.xss">
+      <DependentUpon>RentACarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RentACarModel.edmx.diagram">
+      <DependentUpon>RentACarModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RentACarModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RentACarModel.Context.cs</LastGenOutput>
+      <DependentUpon>RentACarModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="RentACarModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RentACarModel.edmx</DependentUpon>
+      <LastGenOutput>RentACarModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\edit-text-icon-sign-symbol-260nw-1237672183.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
